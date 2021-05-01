@@ -13,10 +13,21 @@ print('x_test:  '  + str(x_test.shape))
 print('y_test:  '  + str(y_test.shape))
 
 # show image
-for i in range(9):  
-    pyplot.subplot(330 + 1 + i)
-    pyplot.imshow(x_train[i], cmap=pyplot.get_cmap('gray'))
+# for i in range(100):  
+#     pyplot.subplot(10, 10, 1+i)
+#     pyplot.imshow(x_train[i], cmap=pyplot.get_cmap('gray'))
+# pyplot.show()
+
+pyplot.figure(figsize=(7,7))
+for i in range(25):
+  pyplot.subplot(5, 5, i+1)
+  pyplot.xticks([])
+  pyplot.yticks([])
+  pyplot.grid(False)
+  pyplot.imshow(x_train[i], cmap=pyplot.get_cmap('gray'))
+  pyplot.xlabel(y_train[i])
 pyplot.show()
+
 
 # to float
 x_train, x_test = x_train / 255.0, x_test / 255.0
